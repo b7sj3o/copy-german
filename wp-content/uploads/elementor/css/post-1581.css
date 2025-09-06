@@ -1,0 +1,78 @@
+.elementor-1581 .elementor-element.elementor-element-548c8735{border-style:solid;border-width:0px 0px 0px 8px;border-color:#F5A200;transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;padding:3em 4em 3em 4em;}.elementor-1581 .elementor-element.elementor-element-548c8735 > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1581 .elementor-element.elementor-element-6123764a{text-align:center;}.elementor-1581 .elementor-element.elementor-element-6123764a .elementor-heading-title{font-family:"MuseoSansCyrl", Sans-serif;font-size:28px;font-weight:700;}.elementor-1581 .elementor-element.elementor-element-6ed4eb49 > .elementor-widget-container{margin:2em 0em 0em 0em;}#elementor-popup-modal-1581 .dialog-message{width:755px;height:auto;padding:0em 0em 0em 0em;}#elementor-popup-modal-1581{justify-content:center;align-items:center;pointer-events:all;background-color:rgba(0,0,0,.8);}#elementor-popup-modal-1581 .dialog-close-button{display:flex;font-size:22px;}#elementor-popup-modal-1581 .dialog-widget-content{box-shadow:2px 8px 23px 3px rgba(0,0,0,0.2);}#elementor-popup-modal-1581 .dialog-close-button i{color:#C4C4C4;}#elementor-popup-modal-1581 .dialog-close-button svg{fill:#C4C4C4;}@media(max-width:767px){.elementor-1581 .elementor-element.elementor-element-548c8735{border-width:0px 0px 0px 4px;padding:2em 0em 2em 0em;}}/* Start custom CSS */.popup-cf7-row {
+    display: flex !important;
+    column-gap: 1.5em;
+    align-items: baseline;
+}
+
+.popup-cf7-column input[type="tel"]{
+    border: none;
+    border-bottom: 2px solid #f5a200;
+    padding: 0 0 10px;
+    width: 100%;
+    outline: none;
+    position: relative;
+    background: #fff;
+}
+
+.popup-cf7-column {
+    display: flex;
+    flex-direction: column;
+    
+    width: 47%;
+    flex-basis: 49%;
+}
+
+.popup-cf7-column input[type="submit"]{
+    padding: 15px 23px;
+    border-radius: 40px;
+    border: none;
+    background: #f5a200;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    outline: none;
+}
+
+@media (max-width:767px) {
+    .popup-cf7-row {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 1em;
+        
+    }
+    .popup-cf7-column {
+        width:100%;
+        flex-basis:100%;
+        
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}/* End custom CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'MuseoSansCyrl';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: url('../../2023/09/MuseoSansCyrl-500.woff2') format('woff2'),
+		url('../../2023/09/MuseoSansCyrl-500.woff') format('woff');
+}
+@font-face {
+	font-family: 'MuseoSansCyrl';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: url('../../2023/09/MuseoSansCyrl-700.woff2') format('woff2'),
+		url('../../2023/09/MuseoSansCyrl-700-1.woff') format('woff');
+}
+@font-face {
+	font-family: 'MuseoSansCyrl';
+	font-style: normal;
+	font-weight: 900;
+	font-display: auto;
+	src: url('../../2023/09/MuseoSansCyrl-900.woff2') format('woff2'),
+		url('../../2023/09/MuseoSansCyrl-900-1.woff') format('woff');
+}
+/* End Custom Fonts CSS */

@@ -1,0 +1,331 @@
+:root {
+    --background-color: rgb(240, 200, 194);
+    --background-color-hover: rgb(235, 195, 191);
+}
+
+.pricing-table-container {
+    background: var(--background-color);
+    border-radius: 8px;
+    border: 1px solid black;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    margin: 32px 0;
+    overflow-x: auto;
+}
+
+.pricing-table-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #1f2937;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.pricing-table th,
+.pricing-table td {
+    border: 1px solid black;
+    padding: 12px 16px;
+}
+
+.pricing-table th {
+    background-color: var(--background-color);
+    border-top: 1px solid black !important;
+    font-weight: 600;
+    color: #374151;
+}
+
+.pricing-table th.text-left {
+    text-align: left;
+}
+
+.pricing-table th.text-center {
+    text-align: center;
+}
+
+.pricing-table tbody tr {
+    border-bottom: 1px solid black;
+}
+
+.pricing-table tbody tr:hover {
+    background-color: var(--background-color-hover);
+}
+
+.category-cell {
+    font-weight: 500;
+    color: #1f2937;
+    vertical-align: middle;
+}
+
+.category-adults {
+    background-color: #f0fdf4;
+}
+
+.category-kids-10 {
+    background-color: #fefce8;
+}
+
+.category-kids-6 {
+    background-color: #fdf2f8;
+}
+
+.category-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.duration-cell {
+    font-weight: 500;
+    color: #374151;
+}
+
+.price-60min {
+    text-align: center;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.price-45min {
+    text-align: center;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.legend {
+    margin-top: 16px;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.legend-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color-60 {
+    width: 16px;
+    height: 16px;
+    background-color: #dbeafe;
+    border: 1px solid #93c5fd;
+    border-radius: 2px;
+}
+
+.legend-color-45 {
+    width: 16px;
+    height: 16px;
+    background-color: #dcfce7;
+    border: 1px solid #86efac;
+    border-radius: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .pricing-table-container {
+        padding: 16px;
+        margin: 16px 0;
+    }
+    
+    .pricing-table-title {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+    }
+    
+    .pricing-table th,
+    .pricing-table td {
+        padding: 8px 12px;
+        font-size: 0.875rem;
+    }
+    
+    .category-title {
+        font-size: 1rem;
+    }
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+:root{
+    --accent: #f7b030; /* основний жовтий/помаранчевий */
+    --dialog-radius: 12px;
+    --dialog-max-w: 860px;
+  }
+  
+  /* Оверлей */
+  .custom-popup{
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(10,10,12,0.58);
+    z-index: 9999;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  .custom-popup.open{ display:flex; }
+  
+  /* Діалог */
+  .custom-popup__dialog{
+    position: relative;
+    width: min(var(--dialog-max-w), 96vw);
+    background: #ffffff;
+    border-radius: var(--dialog-radius);
+    box-shadow: 0 24px 50px rgba(6, 12, 22, 0.55);
+    overflow: visible; /* щоб аватар виходив над відступом */
+  }
+  
+  /* тонка жовта смужка зліва */
+  .custom-popup__dialog::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: var(--accent);
+    z-index: 2;
+  }
+  
+  /* Тіло (контент) */
+  .custom-popup__body{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 28px;
+    padding: 40px 34px 40px 42px; /* лівий паддінг дозволяє відступ від смужки */
+    align-items: center;
+    position: relative;
+    z-index: 3;
+  }
+  
+  /* Колонка з аватаром */
+  .custom-popup__col--img{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  /* Кругле фото з крапчастою рамкою */
+  .avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 10px; /* відступ між крапками і фото */
+    background: #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 4px dotted rgba(247,160,48,0.95); /* крапчаста рамка */
+    /* трохи виступає за межі контенту — як на зображенні */
+    margin-left: -36px;
+    position: relative;
+    z-index: 4;
+  }
+  .avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display:block;
+  }
+  
+  /* Текстова частина */
+  .custom-popup__title{
+    margin: 0 0 6px;
+    font-size: 26px;
+    line-height: 1.12;
+    color: #0f1724; /* майже чорний */
+    font-weight: 700;
+  }
+  .custom-popup__subtitle{
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #111827;
+    font-weight: 700;
+  }
+  
+  /* Опис */
+  .custom-popup__desc{
+    margin: 0;
+    color: #374151;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  
+  /* Кнопка закриття — кружечок праворуч вгорі */
+  .custom-popup__close{
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    color: black !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+    z-index: 6 !important;
+  }
+
+  .custom-popup__close:hover{
+    color: black !important;
+  }
+  
+  /* Адаптив */
+  @media (max-width: 720px){
+    .custom-popup__body{
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 20px;
+    }
+    .custom-popup__dialog::before{ display:none; } /* приховуємо вертикальну смужку на мобайлі */
+    .avatar{
+      margin-left: 0;
+      width: 120px;
+      height: 120px;
+      padding: 8px;
+      margin: 0 auto;
+    }
+    .custom-popup__title{ text-align:center; }
+    .custom-popup__subtitle{ text-align:center; }
+    .custom-popup__desc{ text-align:center; }
+    .custom-popup__close{ right: 10px; top: 10px; }
+  }
+  
+  /* корисна класика для екранних скринрідерів (необов'язково) */
+  .visually-hidden{
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden; clip: rect(1px,1px,1px,1px);
+    white-space: nowrap;
+  }
+  
+
+.logo {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+}
+
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
