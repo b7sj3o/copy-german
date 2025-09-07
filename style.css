@@ -86,14 +86,12 @@
 
 .price-60min {
     text-align: center;
-    color: #2563eb;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .price-45min {
     text-align: center;
-    color: #16a34a;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .legend {
@@ -328,4 +326,31 @@
 .logo img {
     width: 100%;
     height: auto;
+}
+
+
+
+.review-image {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.address-text {
+  font-size: 28px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .hide-md {
+    display: none !important;
+  }
+  .address-text {
+    font-size: 20px !important;
+  }
+}
+
+
+.my-icon-cool {
+  transform: scale(2);
+  margin-left: 15px;
 }
