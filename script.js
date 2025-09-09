@@ -121,14 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openPopupBtn = document.querySelector('#open-popup-btn');
     const formPopup = document.querySelector('.my-popup-form');
     const closePopupBtn = formPopup ? formPopup.querySelector('.popup-close') : null;
-    
-    function openPopup() {
-        if (formPopup) {
-            formPopup.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-    }
-    
+  
     function closePopup() {
         if (formPopup) {
             formPopup.classList.remove('open');
@@ -140,7 +133,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openPopupBtn) {
         openPopupBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            openPopup();
+            if (formPopup) {
+                formPopup.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
         });
     }
     
