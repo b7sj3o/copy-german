@@ -57,4 +57,116 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') close();
     });
 
+
+    // tg form
+    const bot_token = '6406654898:AAH01hMh8y8CqJP55D6XtLUYOan7DQh-KeU'
+    const chat_id = '928132950'
+
+    const forms = document.querySelectorAll('.tg-form');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let message = '';
+            if (form.classList.contains('popup-form2')) {
+                const formPhone = form.elements['user-phone'].value;
+
+                if (!formPhone) {
+                    alert('Заповніть всі поля');
+                    return;
+                }
+
+                message = `%0AНомер телефону: ${formPhone}`;
+            } else{
+                const formName = form.elements['user-name'].value;
+                const formPhone = form.elements['user-phone'].value;
+                const formEmail = form.elements['user-email'].value;
+
+                if (!formName || !formPhone || !formEmail) {
+                    alert('Заповніть всі поля');
+                    return;
+                }
+
+                message = `%0AІм'я: ${formName}%0AНомер телефону: ${formPhone}%0AEmail: ${formEmail}`;
+
+            }
+    
+    
+            const url = `https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}`;
+    
+            fetch(url, {
+                method: 'POST',
+            })
+                .then((response) => {
+                    if (response.status == 404) {
+                        alert('Помилка при надсиланні даних');
+                    } else if (response.status == 200) {
+                        alert('Дані успішно надіслано');
+                        if (form.classList.contains('popup-form2')) {
+                            form.reset();
+                            closePopup();
+                        } else {
+                            window.location.reload();
+                        }
+                    }
+                })
+                .catch((error) => {
+                    console.error('Помилка при надсиланні даних:', error);
+                });
+        });
+    });
+
+    // Popup functionality
+    const openPopupBtn = document.querySelector('#open-popup-btn');
+    const formPopup = document.querySelector('.my-popup-form');
+    const closePopupBtn = formPopup ? formPopup.querySelector('.popup-close') : null;
+    
+    function openPopup() {
+        if (formPopup) {
+            formPopup.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closePopup() {
+        if (formPopup) {
+            formPopup.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Open popup when button is clicked
+    if (openPopupBtn) {
+        openPopupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openPopup();
+        });
+    }
+    
+    // Close popup when X button is clicked
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closePopup();
+        });
+    }
+    
+    // Close popup when clicking outside the form
+    if (formPopup) {
+        formPopup.addEventListener('click', (e) => {
+            if (e.target === formPopup) {
+                closePopup();
+            }
+        });
+    }
+    
+    // Close popup when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && formPopup && formPopup.classList.contains('open')) {
+            closePopup();
+        }
+    });
+
 });
+
